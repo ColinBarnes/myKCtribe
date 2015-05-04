@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" ng-app="kcTribeApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<title>My KC Tribe</title>
+	<script src="app/common/lib/angular.js"></script>
+	<script src="app/common/lib/angular-touch.js"></script>
+	<script src="app/common/lib/angular-route.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/calendar/calendar.js"></script>
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="/styles/css/style.css" />
+</head>
+<body ng-controller="EventsCtrl">
+	<div ng-view></div>
+	<div class="calContainer">
+		<kc-calendar ref-day="refDate" highlighted-days="dates"> </kc-calendar>
+		<!--<span>{{refDate | date: 'medium'}}</span>-->
+		<div ng-click="toggleAddEvent()" class="addEvent">+ Add Event<!--Or Cancel --></div>
+		<form ng-submit="addEvent()" ng-show="addEventToggle" name="eventForm" novalidate>
+			<div>
+				<label>Description</label>
+				<input type="text" name="description" ng-model="newEvent.description" required>
+			</div>
+			<div>
+				<label>Summary</label>
+				<textarea ng-model="newEvent.summary"></textarea>
+			</div>
+			<div>
+				<label>Start</label>
+				<input type="text" name="start" ng-model="newEvent.start" ng-init="newEvent.start = (refDate | date: 'shortDate')">
+			</div>
+			<div>
+				<label>End</label>
+				<input type="text" name="end" ng-model="newEvent.end" ng-init="newEvent.end = (refDate | date: 'shortDate')">
+			</div>
+			<div>
+				<label>Location</label>
+				<input type="text" name="location" ng-model="newEvent.location">
+			</div>
+			<button type="submit" ng-disabled="eventForm.$invalid">
+				Add
+			</button>
+		</form>
+	</div>
+	<div class="allEvents">
+		<div class="event" ng-show="newEvent.description || newEvent.summary || newEvent.location">
+			<div ng-show="newEvent.description" class="description">{{newEvent.description}}</div>
+			<div ng-show="newEvent.description" class="start">{{newEvent.start | date:'EEEE MMMM d, yyyy'}}</div>
+			<!--<div ng-show="newEvent.description">{{newEvent.end | date: 'medium'}}</div>-->
+			<div ng-show="newEvent.location" class="location">{{newEvent.location}}</div>
+			<div ng-show="newEvent.summary" class="summary">{{newEvent.summary}}</div>
+		</div>
+		<div class ="event" ng-repeat="event in events | filter: futureDates | orderBy: 'start' ">
+			<div class="description">{{event.description}}</div>
+			<div class="start">{{event.start | date:'EEEE MMMM d, yyyy'}}</div>
+			<!--<div class="end">{{event.end | date:'medium'}}</div>-->
+			<div class="location">{{event.location}}</div>
+			<div class="summary">{{event.summary}}</div>
+		</div>
+	</div>
+</body>
+	<script type="text/ng-template" id="calendar.html">
+		<div class="kc-calendar">
+			<table>
+				<tbody>
+					<tr>
+						<!-- Need to write a directive for rowspan -->
+						<td ng-click="lastMonth()" rowspan="8" class="navigate">&lt;</td>
+						<td colspan="7" class="month">{{refDay | date:'MMMM'}}</td>
+						<td ng-click="nextMonth()" rowspan="8" class="navigate">&gt;</td>
+					</tr>
+					<tr>
+						<td ng-repeat="day in daysOfWeek" class="dayOfWeek">{{day}}</td>
+					</tr>
+					<tr ng-repeat="week in weeks">
+						<td ng-repeat="day in week" ng-click="setDate(day.date)">
+							<div class="rounded" ng-class="{selected: day.selected, highlighted: day.highlighted, differentMonth: day.differentMonth}">
+								{{day.date.getDate()}}
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</script>
+</html>

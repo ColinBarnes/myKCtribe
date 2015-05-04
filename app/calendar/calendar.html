@@ -1,0 +1,56 @@
+<div id="CalendarCtrl">
+	<div class="calContainer">
+		<kc-calendar ref-day="refDate" highlighted-days="dates"> </kc-calendar>
+		<div ng-click="toggleAddEvent()" class="addEvent">{{addEventToggle ? 'Cancel' : '+ Add Event'}}</div>
+		<form ng-submit="addEvent()" ng-show="addEventToggle" name="eventForm" novalidate>
+			<div>
+				<label>Name</label>
+				<input type="text" name="description" ng-model="newEvent.description" required>
+			</div>
+			<div>
+				<label>Description</label>
+				<textarea ng-model="newEvent.summary" rows="5"></textarea>
+			</div>
+			<div class="start">
+				<label>Start Date</label>
+				<input type="text" name="start" ng-model="newEvent.start_day">
+			</div>
+			<div class="start">
+				<label>Start Time</label>
+				<select ng-model="newEvent.start_time" ng-options="time for time in times"></select>
+			</div>
+			<div class="end">
+				<label>End Date</label>
+				<input type="text" name="end" ng-model="newEvent.end_day">
+			</div>
+			<div class="end">
+				<label>End Time</label>
+				<select ng-model="newEvent.end_time" ng-options="time for time in times"></select>
+			</div>
+			<div>
+				<label>Location</label>
+				<input type="text" name="location" ng-model="newEvent.location">
+			</div>
+			<button type="submit" ng-disabled="eventForm.$invalid">
+				Add
+			</button>
+		</form>
+	</div>
+	<div class="allEvents">
+		<div class="event" ng-show="newEvent.description || newEvent.summary || newEvent.location">
+			<div ng-show="newEvent.description" class="description">{{newEvent.description}}</div>
+			<div ng-show="newEvent.description" class="start">{{newEvent.start | date:'EEEE MMMM d, yyyy'}}</div>
+			<!--<div ng-show="newEvent.description">{{newEvent.end | date: 'medium'}}</div>-->
+			<div ng-show="newEvent.location" class="location">{{newEvent.location}}</div>
+			<div ng-show="newEvent.summary" class="summary">{{newEvent.summary}}</div>
+		</div>
+		<div class ="event" ng-repeat="event in events | filter: futureDates | orderBy: 'start' ">
+			<div class="description">{{event.description}}</div>
+			<div class="start">{{event.start | date:'EEEE MMMM d, yyyy'}}</div>
+			<!--<div class="end">{{event.end | date:'medium'}}</div>-->
+			<div class="location">{{event.location}}</div>
+			<div class="summary">{{event.summary}}</div>
+		</div>
+	</div>
+</div>
+

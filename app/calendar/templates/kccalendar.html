@@ -1,0 +1,22 @@
+<div class="kc-calendar">
+	<table>
+		<tbody>
+			<tr>
+				<!-- Need to write a directive for rowspan -->
+				<td ng-click="lastMonth()" rowspan="8" class="navigate">&lt;</td>
+				<td colspan="7" class="month">{{refDay | date:'MMMM'}}</td>
+				<td ng-click="nextMonth()" rowspan="8" class="navigate">&gt;</td>
+			</tr>
+			<tr>
+				<td ng-repeat="day in daysOfWeek" class="dayOfWeek">{{day}}</td>
+			</tr>
+			<tr ng-repeat="week in weeks">
+				<td ng-repeat="day in week" ng-click="setDate(day.date)">
+					<div class="rounded" ng-class="{selected: day.selected, highlighted: day.highlighted, differentMonth: day.differentMonth}">
+						{{day.date.getDate()}}
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

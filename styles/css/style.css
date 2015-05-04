@@ -1,0 +1,438 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 18, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../sass/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 41, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../../assets/fonts/lato/lato-regular-webfont.eot");
+  src: url("../../assets/fonts/lato/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lato/lato-regular-webfont.woff") format("woff"), url("../../assets/fonts/lato/lato-regular-webfont.ttf") format("truetype"), url("../../assets/fonts/lato/lato-regular-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../../assets/fonts/lato/lato-light-webfont.eot");
+  src: url("../../assets/fonts/lato/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lato/lato-light-webfont.woff") format("woff"), url("../../assets/fonts/lato/lato-light-webfont.ttf") format("truetype"), url("../../assets/fonts/lato/lato-light-webfont.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../../assets/fonts/lato/lato-bold-webfont.eot");
+  src: url("../../assets/fonts/lato/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lato/lato-bold-webfont.woff") format("woff"), url("../../assets/fonts/lato/lato-bold-webfont.ttf") format("truetype"), url("../../assets/fonts/lato/lato-bold-webfont.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../../assets/fonts/lato/lato-black-webfont.eot");
+  src: url("../../assets/fonts/lato/lato-black-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lato/lato-black-webfont.woff") format("woff"), url("../../assets/fonts/lato/lato-black-webfont.ttf") format("truetype"), url("../../assets/fonts/lato/lato-black-webfont.svg") format("svg");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Regular.eot");
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/clearsans-1.00/WOFF/ClearSans-Regular.woff") format("woff"), url("../../assets/fonts/clearsans-1.00/TTF/ClearSans-Regular.ttf") format("truetype"), url("../../assets/fonts/clearsans-1.00/SVG/ClearSans-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Thin.eot");
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Thin.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/clearsans-1.00/WOFF/ClearSans-Thin.woff") format("woff"), url("../../assets/fonts/clearsans-1.00/TTF/ClearSans-Thin.ttf") format("truetype"), url("../../assets/fonts/clearsans-1.00/SVG/ClearSans-Thin.svg") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Bold.eot");
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/clearsans-1.00/WOFF/ClearSans-Bold.woff") format("woff"), url("../../assets/fonts/clearsans-1.00/TTF/ClearSans-Bold.ttf") format("truetype"), url("../../assets/fonts/clearsans-1.00/SVG/ClearSans-Bold.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Light.eot");
+  src: url("../../assets/fonts/clearsans-1.00/EOT/ClearSans-Light.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/clearsans-1.00/WOFF/ClearSans-Light.woff") format("woff"), url("../../assets/fonts/clearsans-1.00/TTF/ClearSans-Light.ttf") format("truetype"), url("../../assets/fonts/clearsans-1.00/SVG/ClearSans-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'league_gothicregular';
+  src: url("../../assets/fonts/League-Gothic/leaguegothic-regular-webfont.eot");
+  src: url("../../assets/fonts/League-Gothic/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/League-Gothic/leaguegothic-regular-webfont.woff") format("woff"), url("../../assets/fonts/League-Gothic/leaguegothic-regular-webfont.ttf") format("truetype"), url("../../assets/fonts/League-Gothic/leaguegothic-regular-webfont.svg#league_gothicregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'league_gothicCnRg';
+  src: url("../../assets/fonts/League-Gothic/leaguegothic-condensedregular-webfont.eot");
+  src: url("../../assets/fonts/League-Gothic/leaguegothic-condensedregular-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/League-Gothic/leaguegothic-condensedregular-webfont.woff") format("woff"), url("../../assets/fonts/League-Gothic/leaguegothic-condensedregular-webfont.ttf") format("truetype"), url("../../assets/fonts/League-Gothic/leaguegothic-condensedregular-webfont.svg#league_gothicCnRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oswaldbold';
+  src: url("../../assets/fonts/oswald/oswald-bold-webfont.eot");
+  src: url("../../assets/fonts/oswald/oswald-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/oswald/oswald-bold-webfont.woff") format("woff"), url("../../assets/fonts/oswald/oswald-bold-webfont.ttf") format("truetype"), url("../../assets/fonts/oswald/oswald-bold-webfont.svg#oswaldbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oswaldlight';
+  src: url("../../assets/fonts/oswald/oswald-light-webfont.eot");
+  src: url("../../assets/fonts/oswald/oswald-light-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/oswald/oswald-light-webfont.woff") format("woff"), url("../../assets/fonts/oswald/oswald-light-webfont.ttf") format("truetype"), url("../../assets/fonts/oswald/oswald-light-webfont.svg#oswaldlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oswaldbook';
+  src: url("../../assets/fonts/oswald/oswald-regular-webfont.eot");
+  src: url("../../assets/fonts/oswald/oswald-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/oswald/oswald-regular-webfont.woff") format("woff"), url("../../assets/fonts/oswald/oswald-regular-webfont.ttf") format("truetype"), url("../../assets/fonts/oswald/oswald-regular-webfont.svg#oswaldbook") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'oswald_stencilregular';
+  src: url("../../assets/fonts/oswald/oswald-stencil-webfont.eot");
+  src: url("../../assets/fonts/oswald/oswald-stencil-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/oswald/oswald-stencil-webfont.woff") format("woff"), url("../../assets/fonts/oswald/oswald-stencil-webfont.ttf") format("truetype"), url("../../assets/fonts/oswald/oswald-stencil-webfont.svg#oswald_stencilregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lorabold';
+  src: url("../../assets/fonts/lora/lora-bold-webfont.eot");
+  src: url("../../assets/fonts/lora/lora-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lora/lora-bold-webfont.woff") format("woff"), url("../../assets/fonts/lora/lora-bold-webfont.ttf") format("truetype"), url("../../assets/fonts/lora/lora-bold-webfont.svg#lorabold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lorabold_italic';
+  src: url("../../assets/fonts/lora/lora-bolditalic-webfont.eot");
+  src: url("../../assets/fonts/lora/lora-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lora/lora-bolditalic-webfont.woff") format("woff"), url("../../assets/fonts/lora/lora-bolditalic-webfont.ttf") format("truetype"), url("../../assets/fonts/lora/lora-bolditalic-webfont.svg#lorabold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'loraitalic';
+  src: url("../../assets/fonts/lora/lora-italic-webfont.eot");
+  src: url("../../assets/fonts/lora/lora-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lora/lora-italic-webfont.woff") format("woff"), url("../../assets/fonts/lora/lora-italic-webfont.ttf") format("truetype"), url("../../assets/fonts/lora/lora-italic-webfont.svg#loraitalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'loraregular';
+  src: url("../../assets/fonts/lora/lora-regular-webfont.eot");
+  src: url("../../assets/fonts/lora/lora-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/lora/lora-regular-webfont.woff") format("woff"), url("../../assets/fonts/lora/lora-regular-webfont.ttf") format("truetype"), url("../../assets/fonts/lora/lora-regular-webfont.svg#loraregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 12, ../sass/style.scss */
+html {
+  font-size: 100%;
+  height: 100%;
+}
+
+/* line 17, ../sass/style.scss */
+body {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: 'Lato', serif;
+  font-weight: 300;
+  color: #FFF;
+  height: 100%;
+  background-color: #2c3e50;
+}
+
+/* line 27, ../sass/style.scss */
+div[ng-view] {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 32, ../sass/style.scss */
+input, textarea, select, button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 36, ../sass/style.scss */
+div#LoginCtrl {
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/background_small.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+/* line 43, ../sass/style.scss */
+div#LoginCtrl .dialog {
+  width: 75%;
+  height: 9em;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 1.5em;
+}
+/* line 52, ../sass/style.scss */
+div#LoginCtrl .dialog * {
+  width: 75%;
+  height: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 60, ../sass/style.scss */
+div#LoginCtrl .dialog div {
+  text-align: center;
+}
+/* line 65, ../sass/style.scss */
+div#LoginCtrl input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Lato';
+  display: block;
+  border: 0;
+  padding-left: 0.75em;
+}
+/* line 73, ../sass/style.scss */
+div#LoginCtrl button {
+  font-family: 'Lato';
+  font-size: 1em;
+  line-height: 1.5em;
+  border: 0;
+  background-color: #e74c3c;
+  color: white;
+  display: block;
+  padding: 0;
+}
+/* line 84, ../sass/style.scss */
+div#LoginCtrl .photoCopyright {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1.5em;
+  margin-right: 1.5em;
+  text-align: right;
+  color: #bdc3c7;
+}
+
+/* line 96, ../sass/style.scss */
+div#CalendarCtrl {
+  width: 100%;
+  background: #2c3e50;
+}
+/* line 102, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table {
+  width: 100%;
+  background: #34495e;
+}
+/* line 106, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 1.5em;
+  width: 11.11111%;
+  text-align: center;
+}
+/* line 113, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td.navigate {
+  vertical-align: middle;
+  border: 10px #2c3e50;
+}
+/* line 118, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td.month {
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 1.5em;
+  line-height: 1.5em;
+  font-size: 2em;
+}
+/* line 127, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td div.selected {
+  font-weight: bold;
+  	/*
+  	-moz-border-radius: ($base-line-height / $base-font-size) * 0.5em; 
+  	-webkit-border-radius: ($base-line-height / $base-font-size) * 0.5em; 
+          border-radius: ($base-line-height / $base-font-size) * 0.5em; 		    
+      width: ($base-line-height/$base-font-size) * 1em;
+      height: ($base-line-height/$base-font-size) * 1em;
+      margin: auto;
+      */
+  width: 100%;
+  height: 100%;
+  background-color: #e74c3c !important;
+}
+/* line 143, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td div.highlighted {
+  background-color: #2c3e50;
+}
+/* line 147, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td div.differentMonth {
+  color: #95a5a6;
+}
+/* line 151, ../sass/style.scss */
+div#CalendarCtrl div.kc-calendar table td.dayOfWeek {
+  text-transform: uppercase;
+  background-color: #e74c3c;
+}
+/* line 162, ../sass/style.scss */
+div#CalendarCtrl div.addEvent {
+  width: 77.778%;
+  border-top-width: 0.75em;
+  border-top-style: solid;
+  border-top-color: #2c3e50;
+  background: #e74c3c;
+  margin-bottom: 0.75em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2em;
+  line-height: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 178, ../sass/style.scss */
+div#CalendarCtrl form {
+  background: #2980B9;
+  width: 77.778%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 1.5em;
+}
+/* line 185, ../sass/style.scss */
+div#CalendarCtrl form div {
+  padding: 0.75em;
+}
+/* line 189, ../sass/style.scss */
+div#CalendarCtrl form div textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: visible;
+}
+/* line 195, ../sass/style.scss */
+div#CalendarCtrl form div label {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+/* line 201, ../sass/style.scss */
+div#CalendarCtrl form div input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+}
+/* line 214, ../sass/style.scss */
+div#CalendarCtrl div.event {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #34495e;
+  padding: 0.75em;
+  width: 77.778%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+/* line 223, ../sass/style.scss */
+div#CalendarCtrl div.event div.description {
+  text-decoration: uppercase;
+  display: inline;
+  border-bottom: 3px solid #e74c3c;
+  line-height: 1.5em;
+  font-size: 2em;
+}
